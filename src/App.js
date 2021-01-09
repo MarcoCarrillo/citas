@@ -22,6 +22,11 @@ function App() {
     }
 
 
+    //Mensaje condicional(cuando no haya citas mostrar no hay citas en vez de administra tus citas)
+    //console.log(citas.length);
+    const titulo = citas.length === 0 ? 'No hay citas': 'Administra tus Citas';
+
+
 
     return ( 
         <Fragment>
@@ -35,7 +40,7 @@ function App() {
                     />
                 </div>
                 <div className="one-half column">
-                    <h2>Administra tus citas</h2>
+                    <h2>{titulo}</h2>
                     {citas.map(cita => (
                         <Cita
                         key={cita.id}

@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import shortid from 'shortid';
+import PropTypes from 'prop-types';
 
 const Formulario = ({crearCita}) => {
 
@@ -69,7 +70,6 @@ const Formulario = ({crearCita}) => {
                 className="u-full-width"
                 placeholder="Nombre Mascota"
                 onChange={actualizarState}
-                onChange={actualizarState}
                 value={mascota}
              />
              <label>Nombre Dueño</label>
@@ -115,5 +115,8 @@ const Formulario = ({crearCita}) => {
      </Fragment>
     );
 }
- 
+
+Formulario.propTypes={
+    crearCita: PropTypes.func.isRequired
+} 
 export default Formulario;
